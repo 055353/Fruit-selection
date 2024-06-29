@@ -1,0 +1,27 @@
+fruit = ['apple', 'orange', 'mango']
+
+def selection(index):
+    """
+    Selects a fruit from the list based on the given index.
+
+    Parameters:
+    index (int): The index of the fruit in the list.
+
+    Returns:
+    str: The fruit at the given index.
+    If the index is out of range or not an integer, an appropriate message is returned.
+    """
+    try:
+        return fruit[index]
+    except ValueError:
+        return "The input is not a number"
+    except IndexError:
+        return "Please enter a number within 0 - 2"
+
+try:
+    user_input = int(input("Please enter a value between 0 and 2: \n"))
+    result = selection(user_input)
+except ValueError:
+    result = "The input is not a number"
+
+print(result)
